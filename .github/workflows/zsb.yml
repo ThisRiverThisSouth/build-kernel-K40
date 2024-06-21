@@ -6,7 +6,7 @@ on:
       KERNEL_SOURCE:
         description: 'Kernel Source'
         required: true
-        default: 'ananyuanan/kernel_xiaomi_sm8250'
+        default: 'ThisRiverThisSouth/kernel_xiaomi_sm8250'
       KERNEL_SOURCE_BRANCH:
         description: 'Branch'
         required: true
@@ -70,7 +70,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{env.PERSONAL_TOKEN}}
-        repository: ananyuanan/AnyKernel3
+        repository: ThisRiverThisSouth/AnyKernel3
         path: kernel-source/AnyKernel3
 
     - name: Setup KernelSU
@@ -79,7 +79,7 @@ jobs:
         cd kernel-source
             # git apply AnyKernel3/patch/
             bash AnyKernel3/patch/1.sh
-            curl -LSs "https://raw.githubusercontent.com/ananyuanan/KernelSU/test/kernel/setup.sh" | bash -
+            curl -LSs "https://raw.githubusercontent.com/ThisRiverThisSouth/KernelSU/test/kernel/setup.sh" | bash -
             echo "UPLOADNAME=-KernelSU" >> $GITHUB_ENV
 
     - name: Build kernel
